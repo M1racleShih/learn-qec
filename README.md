@@ -24,11 +24,13 @@ DSL、Compiler 和硬件 ISA 是本项目的后续工程背景，不是当前学
 
 - 已确认学习目标与教学方式。
 - 已制定完整学习 Roadmap。
-- 下一阶段：阶段 0——建立 QEC 与 surface code 的全局地图。
+- 已完成阶段 0：建立 QEC 与 surface code 的全局地图。
+- 下一阶段：阶段 1——最小量子知识包。
 
 ## 仓库导航
 
 - [学习 Roadmap](ROADMAP.md)：阶段安排、验收标准和选修内容。
+- [阶段学习笔记](docs/learning/README.md)：已完成阶段的知识、验收和遗留问题。
 - [论文转换稿](docs/arxiv/A_Game_of_surface_code-1808.02892v3.md)：主阅读材料。
 - [论文来源与许可](docs/arxiv/README.md)：原始论文、CC BY 4.0 许可和转换说明。
 
