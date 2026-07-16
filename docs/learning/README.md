@@ -7,7 +7,8 @@
 | 阶段 | 主题 | 状态 | 笔记 |
 | --- | --- | --- | --- |
 | 0 | 建立 QEC 与 surface code 的全局地图 | 已完成 | [阅读笔记](00-qec-and-surface-code-map.md) |
-| 1 | 最小量子知识包 | 下一阶段 | — |
+| 1 | 最小量子知识包 | 已完成 | [主笔记](01-minimum-quantum-knowledge/README.md) · [真实问题详解](01-minimum-quantum-knowledge/questions.md) |
+| 2 | 从一般纠错理解 QEC | 下一阶段 | — |
 
 完整阶段安排和验收标准见[学习 Roadmap](../../ROADMAP.md)。
 
@@ -23,3 +24,11 @@
 - 自测问题和下一阶段衔接。
 
 只有完成复述或小练习后，阶段才会标记为完成。
+
+目录按下面的规则管理：
+
+- 目录和文件名使用补零后的阶段编号加主题名，例如 `01-minimum-quantum-knowledge`。
+- 只有一份笔记的阶段可以使用 `NN-topic-name.md`。
+- 一个阶段有多份文档时，统一放入 `NN-topic-name/` 子目录。
+- 子目录使用 `README.md` 作为阶段入口，补充文档使用能说明用途的文件名。
+- 该阶段专用的图片和其他资源放入同目录下的 `assets/`。

@@ -1,3 +1,6 @@
 .agents/
 .codex/
 .git-data/
+.venv/
+__pycache__/
+.matplotlib/

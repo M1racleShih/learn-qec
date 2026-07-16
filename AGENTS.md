@@ -7,6 +7,10 @@ This repository records a beginner-friendly learning journey through quantum err
 ## Teaching Style
 
 - Teach in Chinese while retaining important English terms used by papers and engineers.
+- Assume the learner has almost no mathematics or physics background. Do not infer prerequisite knowledge from the learner's quantum-control software job title or from concepts not explicitly demonstrated during this course.
+- Before using any new term or symbol, explain it in plain language with a concrete, observable example. Never use one undefined term, such as amplitude, phase, interference, eigenstate, or tensor product, to explain another.
+- Teach only one new conceptual step at a time and check that step before continuing. If an explanation is unclear, discard it and restart from the missing prerequisite instead of adding more jargon or formulas.
+- Separate an operational description (what is prepared, what operation is performed, and what is observed) from the mathematical model. Introduce the model only after the operation and observation are understood.
 - Begin with the problem and an intuitive model before introducing formal terminology.
 - Prefer concrete examples, analogies, and small thought experiments over equations.
 - Introduce formulas only when they are necessary for an accurate explanation or engineering estimate, and translate every symbol into plain language.
@@ -27,3 +31,4 @@ This repository records a beginner-friendly learning journey through quantum err
 - A stage is complete only after the learner passes its teach-back or exercise checkpoint.
 - On completion, write a standalone stage note, update the notes index and current progress, mark the Roadmap, verify the documentation, and sync the stage commit to GitHub.
 - Keep learning notes focused on durable understanding rather than transcripts of the conversation.
+- Name stage notes with a zero-padded stage number and a meaningful topic slug. A stage with one document may use `docs/learning/NN-topic-name.md`. A stage with multiple documents must use `docs/learning/NN-topic-name/`, with `README.md` as the stage entry point and stage-specific supplementary documents and visual assets kept in that directory.
