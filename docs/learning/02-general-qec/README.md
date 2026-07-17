@@ -128,6 +128,19 @@ Q3：|0⟩
 
 接着执行 `CNOT(Q1 → Q2)` 和 `CNOT(Q1 → Q3)`。如果最后分别做 Z measurement，三个结果只会是 `000` 或 `111`。它不是提前随机选好了其中一个，而是仍然保留着原来 `|+⟩` 的 X-basis 信息。
 
+可以把编码过程中的两部分分开跟踪：
+
+```text
+|+00⟩ = (|000⟩ + |100⟩) / √2
+
+|000⟩ 经过两个 CNOT → |000⟩
+|100⟩ 经过两个 CNOT → |111⟩
+
+logical |+⟩ₗ = (|000⟩ + |111⟩) / √2
+```
+
+两个部分前面的数字都是 `1/√2`。Measurement probability 是这个数字的平方，所以每一部分都是 `1/2`，也就是 50%。一次实验会随机读到 `000` 或 `111`，不会读到其他三位组合。但是 measurement 前并没有偷偷选定其中一个；两部分仍然可以在撤销编码后重新还原成 `|+00⟩`。
+
 下面的 Qiskit 电路先编码，再按反向顺序撤销编码，最后对恢复出的 Q1 做 X measurement。图中最后的 `H + Z readout` 等价于 X measurement。
 
 ![三 Qubit repetition code 的编码与撤销](assets/three-qubit-encode-decode.png)
@@ -243,6 +256,15 @@ syndrome：  +1   +1   -1   -1   -1
 ```
 
 Detection event 按“哪个 check 在哪个轮次边界发生变化”计数，不按 physical error 的数量计数。一个位于中间的 data-Qubit error 可以同时翻转两个相邻 checks，因此产生两个 detection events。
+
+假设上一轮两个 checks 都是 `+1`，可以逐个比较：
+
+| 上一轮 syndrome | 本轮 syndrome | `Z₁Z₂` 变了吗 | `Z₂Z₃` 变了吗 | Detection events |
+| --- | --- | --- | --- | --- |
+| `(+1,+1)` | `(-1,+1)` | 是 | 否 | 1 个 |
+| `(+1,+1)` | `(-1,-1)` | 是 | 是 | 2 个 |
+
+计数时看的不是本轮有几个 `-1`，而是有几个 check 相比上一轮改变了符号。在单错误假设下，第二行可能由一次 Q2 X error 造成：一个 physical error 同时改变两个 checks，所以留下两个 detection events。
 
 Measurement 本身也可能出错。例如真实关系一直为 `+1`，但第 3 轮错误地读成 `-1`：
 
