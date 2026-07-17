@@ -26,7 +26,8 @@ DSL、Compiler 和硬件 ISA 是本项目的后续工程背景，不是当前学
 - 已制定完整学习 Roadmap。
 - 已完成阶段 0：建立 QEC 与 surface code 的全局地图。
 - 已完成阶段 1：最小量子知识包。
-- 下一阶段：阶段 2——从经典 repetition code 过渡到 QEC。
+- 已完成阶段 2：从一般纠错理解 QEC。
+- 下一阶段：阶段 3——学习 surface-code patch 游戏。
 
 ## 仓库导航
 
