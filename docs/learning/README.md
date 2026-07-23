@@ -9,7 +9,8 @@
 | 0 | 建立 QEC 与 surface code 的全局地图 | 已完成 | [阅读笔记](00-qec-and-surface-code-map.md) |
 | 1 | 最小量子知识包 | 已完成 | [主笔记](01-minimum-quantum-knowledge/README.md) · [真实问题详解](01-minimum-quantum-knowledge/questions.md) |
 | 2 | 从一般纠错理解 QEC | 已完成 | [主笔记](02-general-qec/README.md) |
-| 3 | 学会玩 surface-code patch 游戏 | 下一阶段 | — |
+| 3 | 学会玩 surface-code patch 游戏 | 已完成 | [主笔记](03-surface-code-patch-game/README.md) · [state injection 补充](03-surface-code-patch-game/state-injection.md) |
+| 4 | 掀开棋盘看真实 surface code | 下一阶段 | — |
 
 完整阶段安排和验收标准见[学习 Roadmap](../../ROADMAP.md)。
 

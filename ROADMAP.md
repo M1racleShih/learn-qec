@@ -63,7 +63,7 @@
 
 **过关标准：** 能讲清“错误发生 → syndrome 变化 → decoder 推断 → 更新 Pauli frame”的纠错闭环。
 
-### [ ] 阶段 3：学会玩 surface-code patch 游戏
+### [x] 阶段 3：学会玩 surface-code patch 游戏
 
 **论文锚点：** 开头规则 I–III、Fig. 1–2。
 

@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1220" role="img" aria-labelledby="title desc">
+  <title id="title">Figure 38 check-list switch 像素对齐标注</title>
+  <desc id="desc">保持论文原图比例，标出左图独有的八个内侧半圆 checks、右图新增的四个跨缝方形 checks 和四个围绕中央注入点的 checks。</desc>
+  <defs>
+    <style>
+      text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #172033; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 16px; fill: #526079; }
+      .panel-title { font-size: 21px; font-weight: 700; }
+      .body { font-size: 16px; }
+      .small { font-size: 13px; fill: #526079; }
+      .formula { font-family: "DejaVu Sans Mono", monospace; font-size: 18px; font-weight: 700; }
+      .old { fill: #f97316; fill-opacity: 0.18; stroke: #c2410c; stroke-width: 2; }
+      .bridge { fill: #f97316; fill-opacity: 0.18; stroke: #c2410c; stroke-width: 2; }
+      .central { fill: #a78bfa; fill-opacity: 0.18; stroke: #7c3aed; stroke-width: 2; }
+      .pair-badge { fill: #c2410c; stroke: #ffffff; stroke-width: 1; }
+      .pair-letter { fill: #ffffff; font-size: 8px; font-weight: 700; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1220" fill="#f7f9fc"/>
+  <text x="800" y="43" text-anchor="middle" class="title">Fig. 38 的 check-list switch</text>
+  <text x="800" y="72" text-anchor="middle" class="subtitle">原图保持 671×326 的宽高比；橙色和紫色标注都按原始像素坐标对齐</text>
+
+  <text x="335" y="111" text-anchor="middle" class="panel-title">A　停止：左图独有的 8 个内侧半圆</text>
+  <text x="1265" y="111" text-anchor="middle" class="panel-title">B　开始：右图新增的 8 个方形</text>
+
+  <!-- Left panel: exact crop, no distortion -->
+  <rect x="45" y="126" width="580" height="583" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <svg x="52" y="133" width="566" height="568" viewBox="6 42 283 284" preserveAspectRatio="xMidYMid meet">
+    <image xlink:href="fig38-original.jpg" x="0" y="0" width="671" height="326"/>
+
+    <!-- Pair A: two inward dark half-faces -->
+    <rect x="147" y="72" width="21" height="56" rx="10.5" class="old"/>
+    <rect x="182" y="72" width="21" height="56" rx="10.5" class="old"/>
+    <circle cx="158" cy="100" r="7" class="pair-badge"/><text x="158" y="103" text-anchor="middle" class="pair-letter">A</text>
+    <circle cx="192" cy="100" r="7" class="pair-badge"/><text x="192" y="103" text-anchor="middle" class="pair-letter">A</text>
+
+    <!-- Pair B: two inward bright half-faces -->
+    <rect x="35" y="128" width="56" height="21" rx="10.5" class="old"/>
+    <rect x="35" y="163" width="56" height="21" rx="10.5" class="old"/>
+    <circle cx="63" cy="139" r="7" class="pair-badge"/><text x="63" y="142" text-anchor="middle" class="pair-letter">B</text>
+    <circle cx="63" cy="173" r="7" class="pair-badge"/><text x="63" y="176" text-anchor="middle" class="pair-letter">B</text>
+
+    <!-- Pair C: two inward bright half-faces -->
+    <rect x="203" y="184" width="56" height="21" rx="10.5" class="old"/>
+    <rect x="203" y="219" width="56" height="21" rx="10.5" class="old"/>
+    <circle cx="231" cy="195" r="7" class="pair-badge"/><text x="231" y="198" text-anchor="middle" class="pair-letter">C</text>
+    <circle cx="231" cy="229" r="7" class="pair-badge"/><text x="231" y="232" text-anchor="middle" class="pair-letter">C</text>
+
+    <!-- Pair D: two inward dark half-faces -->
+    <rect x="91" y="240" width="21" height="56" rx="10.5" class="old"/>
+    <rect x="126" y="240" width="21" height="56" rx="10.5" class="old"/>
+    <circle cx="102" cy="268" r="7" class="pair-badge"/><text x="102" y="271" text-anchor="middle" class="pair-letter">D</text>
+    <circle cx="136" cy="268" r="7" class="pair-badge"/><text x="136" y="271" text-anchor="middle" class="pair-letter">D</text>
+
+    <circle cx="147" cy="184" r="9" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+  </svg>
+
+  <!-- Center: visual accounting, not a one-to-one motion arrow -->
+  <rect x="654" y="126" width="292" height="583" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="800" y="160" text-anchor="middle" font-size="18" font-weight="700">这是 check 集合差</text>
+  <text x="800" y="183" text-anchor="middle" class="small">不是半圆在空间里“长成”方形</text>
+
+  <!-- A mapping icon -->
+  <circle cx="691" cy="232" r="15" fill="#c2410c"/><text x="691" y="238" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">A</text>
+  <path d="M 723 213 Q 741 232 723 251 L 723 213 M 758 213 Q 740 232 758 251 L 758 213" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+  <path d="M 783 232 L 824 232" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="838" y="208" width="48" height="48" rx="6" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+
+  <!-- B mapping icon -->
+  <circle cx="691" cy="318" r="15" fill="#c2410c"/><text x="691" y="324" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">B</text>
+  <path d="M 719 300 Q 741 318 763 300 L 719 300 M 719 336 Q 741 318 763 336 L 719 336" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+  <path d="M 783 318 L 824 318" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="838" y="294" width="48" height="48" rx="6" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+
+  <!-- C mapping icon -->
+  <circle cx="691" cy="404" r="15" fill="#c2410c"/><text x="691" y="410" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">C</text>
+  <path d="M 719 386 Q 741 404 763 386 L 719 386 M 719 422 Q 741 404 763 422 L 719 422" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+  <path d="M 783 404 L 824 404" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="838" y="380" width="48" height="48" rx="6" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+
+  <!-- D mapping icon -->
+  <circle cx="691" cy="490" r="15" fill="#c2410c"/><text x="691" y="496" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">D</text>
+  <path d="M 723 471 Q 741 490 723 509 L 723 471 M 758 471 Q 740 490 758 509 L 758 471" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+  <path d="M 783 490 L 824 490" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="838" y="466" width="48" height="48" rx="6" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+
+  <line x1="681" y1="544" x2="919" y2="544" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="800" y="576" text-anchor="middle" class="body">4 对旧半圆 → 4 个跨缝方形</text>
+  <text x="800" y="614" text-anchor="middle" class="body">再加 4 个围中央的新方形</text>
+  <rect x="733" y="632" width="32" height="32" class="central"/>
+  <rect x="765" y="632" width="32" height="32" class="central"/>
+  <rect x="733" y="664" width="32" height="32" class="central"/>
+  <rect x="765" y="664" width="32" height="32" class="central"/>
+  <circle cx="765" cy="664" r="7" fill="#ffffff" stroke="#7c3aed" stroke-width="3"/>
+  <text x="824" y="671" class="body" font-weight="700">= 共开启 8 个</text>
+
+  <!-- Right panel: exact crop, no distortion -->
+  <rect x="975" y="126" width="580" height="583" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <svg x="982" y="133" width="566" height="568" viewBox="388 42 283 284" preserveAspectRatio="xMidYMid meet">
+    <image xlink:href="fig38-original.jpg" x="0" y="0" width="671" height="326"/>
+
+    <!-- Four bridge checks produced by the four paired gaps -->
+    <rect x="528" y="72" width="56" height="56" rx="4" class="bridge"/>
+    <circle cx="556" cy="100" r="7" class="pair-badge"/><text x="556" y="103" text-anchor="middle" class="pair-letter">A</text>
+    <rect x="416" y="128" width="56" height="56" rx="4" class="bridge"/>
+    <circle cx="444" cy="156" r="7" class="pair-badge"/><text x="444" y="159" text-anchor="middle" class="pair-letter">B</text>
+    <rect x="584" y="184" width="56" height="56" rx="4" class="bridge"/>
+    <circle cx="612" cy="212" r="7" class="pair-badge"/><text x="612" y="215" text-anchor="middle" class="pair-letter">C</text>
+    <rect x="472" y="240" width="56" height="56" rx="4" class="bridge"/>
+    <circle cx="500" cy="268" r="7" class="pair-badge"/><text x="500" y="271" text-anchor="middle" class="pair-letter">D</text>
+
+    <!-- Four additional checks that all share the central injected qubit -->
+    <rect x="472" y="128" width="56" height="56" rx="4" class="central"/>
+    <rect x="528" y="128" width="56" height="56" rx="4" class="central"/>
+    <rect x="472" y="184" width="56" height="56" rx="4" class="central"/>
+    <rect x="528" y="184" width="56" height="56" rx="4" class="central"/>
+    <circle cx="528" cy="184" r="9" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+  </svg>
+
+  <!-- Legend and accounting -->
+  <rect x="64" y="730" width="1472" height="72" rx="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="103" y="748" width="38" height="38" rx="8" class="old"/>
+  <text x="158" y="773" class="body">橙色：4 对、共 8 个旧内侧半圆停止；右图 4 个跨缝方形开始</text>
+  <rect x="885" y="748" width="38" height="38" rx="8" class="central"/>
+  <text x="940" y="773" class="body">紫色：另外 4 个围中央方形开始；中央白点是它们的共同角</text>
+
+  <!-- Concrete local example: pair B -->
+  <text x="800" y="848" text-anchor="middle" class="panel-title">放大 B：两个浅色二体 checks，换成一个浅色四体 check</text>
+
+  <rect x="70" y="872" width="432" height="300" rx="14" fill="#ffffff" stroke="#fed7aa" stroke-width="3"/>
+  <svg x="136" y="880" width="300" height="284" viewBox="25 118 76 72" preserveAspectRatio="xMidYMid meet" overflow="hidden">
+    <image xlink:href="fig38-original.jpg" x="0" y="0" width="671" height="326"/>
+    <rect x="35" y="128" width="56" height="21" rx="10.5" class="old"/>
+    <rect x="35" y="163" width="56" height="21" rx="10.5" class="old"/>
+    <text x="31" y="126" font-size="6" font-weight="700">a</text>
+    <text x="93" y="126" font-size="6" font-weight="700">b</text>
+    <text x="31" y="189" font-size="6" font-weight="700">c</text>
+    <text x="93" y="189" font-size="6" font-weight="700">d</text>
+  </svg>
+
+  <rect x="548" y="904" width="504" height="218" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="800" y="938" text-anchor="middle" class="body" font-weight="700">Before：本轮问两个问题</text>
+  <text x="800" y="973" text-anchor="middle" class="formula">Z_a ⊗ Z_b　以及　Z_c ⊗ Z_d</text>
+  <path d="M 690 1012 L 910 1012" fill="none" stroke="#475569" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="800" y="1052" text-anchor="middle" class="body" font-weight="700">After：改问一个四体联合关系</text>
+  <text x="800" y="1088" text-anchor="middle" class="formula">Z_a ⊗ Z_b ⊗ Z_c ⊗ Z_d</text>
+
+  <rect x="1098" y="872" width="432" height="300" rx="14" fill="#ffffff" stroke="#fed7aa" stroke-width="3"/>
+  <svg x="1164" y="880" width="300" height="284" viewBox="406 118 76 72" preserveAspectRatio="xMidYMid meet" overflow="hidden">
+    <image xlink:href="fig38-original.jpg" x="0" y="0" width="671" height="326"/>
+    <rect x="416" y="128" width="56" height="56" rx="4" class="bridge"/>
+    <text x="412" y="126" font-size="6" font-weight="700">a</text>
+    <text x="474" y="126" font-size="6" font-weight="700">b</text>
+    <text x="412" y="189" font-size="6" font-weight="700">c</text>
+    <text x="474" y="189" font-size="6" font-weight="700">d</text>
+  </svg>
+
+  <text x="800" y="1203" text-anchor="middle" class="body" font-weight="700">16 个未标色的 checks 继续测；physical qubits 没有移动，改变的只是 measurement schedule</text>
+</svg>

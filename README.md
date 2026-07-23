@@ -27,7 +27,8 @@ DSL、Compiler 和硬件 ISA 是本项目的后续工程背景，不是当前学
 - 已完成阶段 0：建立 QEC 与 surface code 的全局地图。
 - 已完成阶段 1：最小量子知识包。
 - 已完成阶段 2：从一般纠错理解 QEC。
-- 下一阶段：阶段 3——学习 surface-code patch 游戏。
+- 已完成阶段 3：学会玩 surface-code patch 游戏。
+- 下一阶段：阶段 4——掀开棋盘，学习真实 surface code 的 physical checks、code cycle 与 decoder。
 
 ## 仓库导航
 
