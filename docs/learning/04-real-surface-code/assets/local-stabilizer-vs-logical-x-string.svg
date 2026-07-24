@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780">
+  <defs>
+    <style>
+      .title { font: 700 31px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #222; }
+      .subtitle { font: 18px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #555; }
+      .panel-title { font: 700 24px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #222; }
+      .label { font: 700 19px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #333; }
+      .small { font: 16px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #555; }
+      .green { fill: #317a49; }
+      .purple { fill: #7047a3; }
+      .green-ring { fill: white; stroke: #317a49; stroke-width: 6; }
+      .purple-ring { fill: white; stroke: #7047a3; stroke-width: 6; }
+      .closed-loop { fill: none; stroke: #317a49; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+      .logical-string { fill: none; stroke: #7047a3; stroke-width: 8; stroke-linecap: round; }
+      .boundary-mark { fill: none; stroke: #7047a3; stroke-width: 5; stroke-dasharray: 10 7; }
+      .divider { stroke: #d2d2d2; stroke-width: 2; }
+      .box { fill: #f7f7f7; stroke: #d2d2d2; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="780" fill="white"/>
+  <text x="700" y="46" text-anchor="middle" class="title">没有 detection events，不一定代表没有 logical error</text>
+  <text x="700" y="78" text-anchor="middle" class="subtitle">同一份论文 Fig. 37 的 d = 5 physical patch</text>
+
+  <line x1="700" y1="110" x2="700" y2="625" class="divider"/>
+
+  <!-- Panel A: local stabilizer -->
+  <text x="300" y="125" text-anchor="middle" class="panel-title">A. 局部闭环：X-type stabilizer</text>
+  <image href="paper-fig37-one-tile-patch-base.png"
+         x="100" y="150" width="400" height="406"
+         preserveAspectRatio="none" image-rendering="auto"/>
+
+  <!-- Four X operators around the central dark face -->
+  <polyline points="224,274 303,274 303,353 224,353 224,274" class="closed-loop"/>
+  <g>
+    <circle cx="224" cy="274" r="22" class="green-ring"/>
+    <circle cx="303" cy="274" r="22" class="green-ring"/>
+    <circle cx="303" cy="353" r="22" class="green-ring"/>
+    <circle cx="224" cy="353" r="22" class="green-ring"/>
+    <text x="224" y="281" text-anchor="middle" class="label green">X</text>
+    <text x="303" y="281" text-anchor="middle" class="label green">X</text>
+    <text x="303" y="360" text-anchor="middle" class="label green">X</text>
+    <text x="224" y="360" text-anchor="middle" class="label green">X</text>
+  </g>
+  <text x="300" y="590" text-anchor="middle" class="label green">局部 stabilizer：logical state 不变</text>
+
+  <!-- Panel B: logical X string -->
+  <text x="1050" y="125" text-anchor="middle" class="panel-title">B. 边界长串：logical X operator</text>
+  <image href="paper-fig37-one-tile-patch-base.png"
+         x="850" y="150" width="400" height="406"
+         preserveAspectRatio="none" image-rendering="auto"/>
+
+  <!-- Five X operators along the left X boundary -->
+  <line x1="897" y1="194" x2="897" y2="509" class="logical-string"/>
+  <g>
+    <circle cx="897" cy="194" r="22" class="purple-ring"/>
+    <circle cx="897" cy="274" r="22" class="purple-ring"/>
+    <circle cx="897" cy="353" r="22" class="purple-ring"/>
+    <circle cx="897" cy="429" r="22" class="purple-ring"/>
+    <circle cx="897" cy="509" r="22" class="purple-ring"/>
+    <text x="897" y="201" text-anchor="middle" class="label purple">X</text>
+    <text x="897" y="281" text-anchor="middle" class="label purple">X</text>
+    <text x="897" y="360" text-anchor="middle" class="label purple">X</text>
+    <text x="897" y="436" text-anchor="middle" class="label purple">X</text>
+    <text x="897" y="516" text-anchor="middle" class="label purple">X</text>
+  </g>
+
+  <!-- Boundary and distance labels -->
+  <path d="M 825 190 L 805 190 L 805 513 L 825 513" class="boundary-mark"/>
+  <text x="778" y="357" text-anchor="middle" class="label purple" transform="rotate(-90 778 357)">d = 5 个 physical X</text>
+  <text x="1050" y="590" text-anchor="middle" class="label purple">logical X string：logical state 被翻转</text>
+
+  <!-- Comparison -->
+  <rect x="55" y="645" width="1290" height="92" rx="12" class="box"/>
+  <text x="90" y="680" class="small">
+    两种 pattern 都可能不产生 detection events：相邻 Z stabilizer 都被翻转偶数次。
+  </text>
+  <text x="90" y="716" class="label">
+    区别不在“有没有端点”，而在它是能缩成局部 face 的 stabilizer，还是横跨 code distance 的 logical string。
+  </text>
+</svg>

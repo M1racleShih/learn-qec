@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820">
+  <defs>
+    <style>
+      .title { font: 700 30px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #222; }
+      .panel-title { font: 700 24px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #222; }
+      .label { font: 20px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #333; }
+      .small { font: 17px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #4d4d4d; }
+      .result { font: 700 22px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #333; }
+      .event-label { font: 700 18px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #b64342; }
+      .face { fill: #f3efb4; stroke: #6c6a50; stroke-width: 2.5; }
+      .data { fill: #202020; }
+      .measure { fill: white; stroke: #202020; stroke-width: 2.5; }
+      .event { fill: #b64342; stroke: white; stroke-width: 3; }
+      .error-line { stroke: #b64342; stroke-width: 3; stroke-dasharray: 8 6; fill: none; }
+      .time-line { stroke: #555; stroke-width: 2.5; fill: none; }
+      .divider { stroke: #cfcfcf; stroke-width: 2; }
+    </style>
+    <marker id="red-arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b64342"/>
+    </marker>
+    <marker id="gray-arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="820" fill="white"/>
+  <text x="700" y="48" text-anchor="middle" class="title">Detection event：空间成对与时间成对</text>
+  <text x="700" y="80" text-anchor="middle" class="small">从论文 Fig. 37 的 stabilizer 几何关系出发</text>
+
+  <line x1="700" y1="110" x2="700" y2="690" class="divider"/>
+
+  <!-- Panel A -->
+  <text x="45" y="135" class="panel-title">A. data X error：两个空间位置同时变化</text>
+  <text x="45" y="170" class="small">两个 Z-type stabilizer 在一个 data qubit 处对角相邻</text>
+
+  <rect x="120" y="240" width="190" height="190" rx="8" class="face"/>
+  <rect x="310" y="430" width="190" height="190" rx="8" class="face"/>
+
+  <!-- Face A data qubits -->
+  <circle cx="120" cy="240" r="7" class="data"/>
+  <circle cx="310" cy="240" r="7" class="data"/>
+  <circle cx="120" cy="430" r="7" class="data"/>
+  <circle cx="310" cy="430" r="7" class="data"/>
+
+  <!-- Face B data qubits -->
+  <circle cx="500" cy="430" r="7" class="data"/>
+  <circle cx="310" cy="620" r="7" class="data"/>
+  <circle cx="500" cy="620" r="7" class="data"/>
+
+  <!-- Measurement qubits and detection-event rings -->
+  <circle cx="215" cy="335" r="18" class="measure"/>
+  <circle cx="215" cy="335" r="28" fill="none" stroke="#b64342" stroke-width="5"/>
+  <text x="215" y="342" text-anchor="middle" class="result">A</text>
+
+  <circle cx="405" cy="525" r="18" class="measure"/>
+  <circle cx="405" cy="525" r="28" fill="none" stroke="#b64342" stroke-width="5"/>
+  <text x="405" y="532" text-anchor="middle" class="result">B</text>
+
+  <!-- Shared data error -->
+  <circle cx="310" cy="430" r="20" fill="white" stroke="#b64342" stroke-width="5"/>
+  <line x1="299" y1="419" x2="321" y2="441" stroke="#b64342" stroke-width="5"/>
+  <line x1="321" y1="419" x2="299" y2="441" stroke="#b64342" stroke-width="5"/>
+  <text x="328" y="408" class="event-label">physical X error</text>
+
+  <path d="M 290 412 Q 255 380 235 357" class="error-line" marker-end="url(#red-arrow)"/>
+  <path d="M 330 449 Q 365 480 385 503" class="error-line" marker-end="url(#red-arrow)"/>
+
+  <text x="60" y="495" class="result">Z_A：+1 → −1</text>
+  <text x="435" y="390" class="result">Z_B：+1 → −1</text>
+  <text x="310" y="660" text-anchor="middle" class="event-label">同一轮出现两个 detection events</text>
+
+  <!-- Panel B -->
+  <text x="740" y="135" class="panel-title">B. measurement error：同一空间位置连续变化</text>
+  <text x="740" y="170" class="small">data 没变，只有中间一轮的 ancilla 读数出错</text>
+
+  <text x="800" y="225" text-anchor="middle" class="label">cycle t−1</text>
+  <text x="1045" y="225" text-anchor="middle" class="label">cycle t</text>
+  <text x="1290" y="225" text-anchor="middle" class="label">cycle t+1</text>
+
+  <!-- Same stabilizer shown over three cycles -->
+  <rect x="735" y="255" width="130" height="130" rx="8" class="face"/>
+  <rect x="980" y="255" width="130" height="130" rx="8" class="face"/>
+  <rect x="1225" y="255" width="130" height="130" rx="8" class="face"/>
+
+  <!-- Corner data qubits -->
+  <g>
+    <circle cx="735" cy="255" r="6" class="data"/>
+    <circle cx="865" cy="255" r="6" class="data"/>
+    <circle cx="735" cy="385" r="6" class="data"/>
+    <circle cx="865" cy="385" r="6" class="data"/>
+    <circle cx="980" cy="255" r="6" class="data"/>
+    <circle cx="1110" cy="255" r="6" class="data"/>
+    <circle cx="980" cy="385" r="6" class="data"/>
+    <circle cx="1110" cy="385" r="6" class="data"/>
+    <circle cx="1225" cy="255" r="6" class="data"/>
+    <circle cx="1355" cy="255" r="6" class="data"/>
+    <circle cx="1225" cy="385" r="6" class="data"/>
+    <circle cx="1355" cy="385" r="6" class="data"/>
+  </g>
+
+  <circle cx="800" cy="320" r="20" class="measure"/>
+  <circle cx="1045" cy="320" r="20" fill="#f6cfcb" stroke="#b64342" stroke-width="4"/>
+  <circle cx="1290" cy="320" r="20" class="measure"/>
+  <text x="800" y="327" text-anchor="middle" class="result">A</text>
+  <text x="1045" y="327" text-anchor="middle" class="result">A</text>
+  <text x="1290" y="327" text-anchor="middle" class="result">A</text>
+
+  <line x1="875" y1="320" x2="960" y2="320" class="time-line" marker-end="url(#gray-arrow)"/>
+  <line x1="1120" y1="320" x2="1205" y2="320" class="time-line" marker-end="url(#gray-arrow)"/>
+
+  <circle cx="920" cy="320" r="13" class="event"/>
+  <circle cx="1165" cy="320" r="13" class="event"/>
+  <text x="920" y="292" text-anchor="middle" class="event-label">变化</text>
+  <text x="1165" y="292" text-anchor="middle" class="event-label">变化</text>
+
+  <text x="800" y="425" text-anchor="middle" class="result">读数 +1</text>
+  <text x="1045" y="425" text-anchor="middle" class="result" fill="#b64342">误读 −1</text>
+  <text x="1290" y="425" text-anchor="middle" class="result">读数 +1</text>
+
+  <text x="1045" y="475" text-anchor="middle" class="small">真实 stabilizer value 一直是 +1</text>
+  <text x="1045" y="515" text-anchor="middle" class="event-label">同一位置在相邻时间出现两个 detection events</text>
+
+  <!-- Legend -->
+  <rect x="45" y="715" width="1310" height="72" rx="10" fill="#f7f7f7" stroke="#d4d4d4"/>
+  <circle cx="90" cy="751" r="7" class="data"/>
+  <text x="110" y="758" class="small">data qubit</text>
+  <circle cx="275" cy="751" r="13" class="measure"/>
+  <text x="298" y="758" class="small">measurement qubit</text>
+  <rect x="510" y="735" width="38" height="32" rx="4" class="face"/>
+  <text x="560" y="758" class="small">Z-type stabilizer face</text>
+  <circle cx="790" cy="751" r="11" class="event"/>
+  <text x="812" y="758" class="small">detection event</text>
+  <text x="1015" y="758" class="small">红圈标记“结果发生变化”，不是单独标记 −1</text>
+</svg>

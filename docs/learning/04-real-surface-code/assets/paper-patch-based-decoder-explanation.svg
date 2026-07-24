@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1750" height="780" viewBox="0 0 1750 780">
+  <defs>
+    <style>
+      .title { font: 700 32px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #222; }
+      .subtitle { font: 18px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #555; }
+      .panel-title { font: 700 25px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #222; }
+      .label { font: 700 20px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #333; }
+      .small { font: 17px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #555; }
+      .red { fill: #b64342; }
+      .blue { fill: #0f4d92; }
+      .event-ring { fill: none; stroke: #b64342; stroke-width: 8; }
+      .recovery-ring { fill: white; stroke: #0f4d92; stroke-width: 7; }
+      .recovery-path { fill: none; stroke: #0f4d92; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+      .flow { fill: none; stroke: #555; stroke-width: 5; }
+      .legend { fill: #f7f7f7; stroke: #d2d2d2; stroke-width: 1.5; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <rect width="1750" height="780" fill="white"/>
+  <text x="875" y="46" text-anchor="middle" class="title">直接在论文 Fig. 37 patch 上看 decoder 的输入与输出</text>
+  <text x="875" y="78" text-anchor="middle" class="subtitle">三块底图直接裁自论文 Fig. 37 原图，格线、颜色和 boundary 均未重画</text>
+
+  <!-- Panel A -->
+  <text x="240" y="125" text-anchor="middle" class="panel-title">A. 真实 physical error chain</text>
+  <image href="paper-fig37-one-tile-patch-base.png"
+         x="40" y="150" width="400" height="406"
+         preserveAspectRatio="none" image-rendering="auto"/>
+
+  <!-- Endpoint detection events -->
+  <circle cx="361" cy="235" r="31" class="event-ring"/>
+  <circle cx="125" cy="471" r="31" class="event-ring"/>
+  <text x="275" y="205" class="label red">Z_A event</text>
+  <text x="155" y="510" class="label red">Z_D event</text>
+
+  <!-- Actual physical X errors at shared vertices -->
+  <g stroke="white" stroke-width="13" stroke-linecap="round">
+    <line x1="307" y1="262" x2="331" y2="286"/>
+    <line x1="331" y1="262" x2="307" y2="286"/>
+    <line x1="231" y1="341" x2="255" y2="365"/>
+    <line x1="255" y1="341" x2="231" y2="365"/>
+    <line x1="152" y1="417" x2="176" y2="441"/>
+    <line x1="176" y1="417" x2="152" y2="441"/>
+  </g>
+  <g stroke="#b64342" stroke-width="8" stroke-linecap="round">
+    <line x1="307" y1="262" x2="331" y2="286"/>
+    <line x1="331" y1="262" x2="307" y2="286"/>
+    <line x1="231" y1="341" x2="255" y2="365"/>
+    <line x1="255" y1="341" x2="231" y2="365"/>
+    <line x1="152" y1="417" x2="176" y2="441"/>
+    <line x1="176" y1="417" x2="152" y2="441"/>
+  </g>
+  <text x="240" y="590" text-anchor="middle" class="label red">红 X 是真实错误；decoder 看不到</text>
+
+  <!-- Flow A to B -->
+  <path d="M 475 350 L 610 350" class="flow" marker-end="url(#arrow)"/>
+  <text x="542" y="327" text-anchor="middle" class="small">只上报变化</text>
+
+  <!-- Panel B -->
+  <text x="875" y="125" text-anchor="middle" class="panel-title">B. decoder input</text>
+  <image href="paper-fig37-one-tile-patch-base.png"
+         x="675" y="150" width="400" height="406"
+         preserveAspectRatio="none" image-rendering="auto"/>
+  <circle cx="996" cy="235" r="31" class="event-ring"/>
+  <circle cx="760" cy="471" r="31" class="event-ring"/>
+  <text x="910" y="205" class="label red">Z_A event</text>
+  <text x="790" y="510" class="label red">Z_D event</text>
+  <text x="875" y="590" text-anchor="middle" class="label red">输入只有两个 detection events</text>
+
+  <!-- Flow B to C -->
+  <path d="M 1110 350 L 1245 350" class="flow" marker-end="url(#arrow)"/>
+  <text x="1177" y="327" text-anchor="middle" class="small">decoder 推断</text>
+
+  <!-- Panel C -->
+  <text x="1510" y="125" text-anchor="middle" class="panel-title">C. output 映射回同一块 patch</text>
+  <image href="paper-fig37-one-tile-patch-base.png"
+         x="1310" y="150" width="400" height="406"
+         preserveAspectRatio="none" image-rendering="auto"/>
+  <circle cx="1631" cy="235" r="31" class="event-ring"/>
+  <circle cx="1395" cy="471" r="31" class="event-ring"/>
+
+  <!-- Decoder-selected recovery through the same three shared vertices -->
+  <polyline points="1631,235 1589,274 1513,353 1434,429 1395,471" class="recovery-path"/>
+  <g>
+    <circle cx="1589" cy="274" r="24" class="recovery-ring"/>
+    <circle cx="1513" cy="353" r="24" class="recovery-ring"/>
+    <circle cx="1434" cy="429" r="24" class="recovery-ring"/>
+    <text x="1589" y="282" text-anchor="middle" class="panel-title blue">X</text>
+    <text x="1513" y="361" text-anchor="middle" class="panel-title blue">X</text>
+    <text x="1434" y="437" text-anchor="middle" class="panel-title blue">X</text>
+  </g>
+  <text x="1510" y="590" text-anchor="middle" class="label blue">蓝 X：recovery / Pauli frame</text>
+
+  <!-- Legend and caveat -->
+  <rect x="55" y="635" width="1640" height="105" rx="12" class="legend"/>
+  <text x="90" y="675" class="small">
+    红 X：真实 physical X error
+  </text>
+  <circle cx="430" cy="669" r="18" class="event-ring"/>
+  <text x="465" y="675" class="small">红圈：detection event</text>
+  <circle cx="755" cy="669" r="18" class="recovery-ring"/>
+  <text x="755" y="676" text-anchor="middle" class="label blue">X</text>
+  <text x="785" y="675" class="small">蓝 X：decoder-selected recovery</text>
+  <text x="90" y="716" class="small">
+    本例中 decoder 恰好选择了与真实 chain 相同的 path；这只是示例，不表示 decoder 能看到或确认真实错误。
+  </text>
+</svg>

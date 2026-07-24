@@ -28,7 +28,8 @@ DSL、Compiler 和硬件 ISA 是本项目的后续工程背景，不是当前学
 - 已完成阶段 1：最小量子知识包。
 - 已完成阶段 2：从一般纠错理解 QEC。
 - 已完成阶段 3：学会玩 surface-code patch 游戏。
-- 下一阶段：阶段 4——掀开棋盘，学习真实 surface code 的 physical checks、code cycle 与 decoder。
+- 已完成阶段 4：掀开棋盘看真实 surface code。
+- 下一阶段：阶段 5——理解 lattice surgery 的 merge、split 与 logical Pauli-product measurement。
 
 ## 仓库导航
 
